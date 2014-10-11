@@ -1,7 +1,7 @@
 dylib-test
 ==========
 
-Test cabal's --enable-executable-dynamic build
+Test cabal's --enable-executable-dynamic build on OSX (Mavericks).
 
 # Symptom 
 
