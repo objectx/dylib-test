@@ -3,6 +3,9 @@ dylib-test
 
 Test cabal's --enable-executable-dynamic build on OSX (Mavericks).
 
+# Cabal version
+Cloned from GitHub (commit:104c6852ffa140cc795c3cb55c92d961c2f8e6d0)
+
 # Symptom 
 
 Build with `cabal configure --enable-executable-dynamic && cabal build`, created executable has a depenency to locally built `*.dylib ` but embedded `LC_RPATH` value is incorrect for installing `${HOME}/.cabal`
