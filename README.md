@@ -7,6 +7,7 @@ Test cabal's --enable-executable-dynamic build on OSX (Mavericks).
 
 Build with `cabal configure --enable-executable-dynamic && cabal build`, created executable has a depenency to locally built `*.dylib ` but embedded `LC_RPATH` value is incorrect for installing `${HOME}/.cabal`
 
+## Examine created executable
 ```
 $ otool -L dist/build/dylib-test/dylib-test
 
@@ -22,8 +23,11 @@ dist/build/dylib-test/dylib-test:
 
 ```
 
+
+Below is `otool -l` output. `Load command 20`'s LC_RPATH considered to be incorrect (when copied to `${HOME}/.cabal` or else), right?
+
 ```
-$ tool -l dist/build/dylib-test/dylib-test
+$ otool -l dist/build/dylib-test/dylib-test
 
 dist/build/dylib-test/dylib-test:
 Load command 0
@@ -349,5 +353,3 @@ Load command 27
   dataoff 9104
  datasize 256
 ```
-
-`Load command 20`'s LC_RPATH considered to be incorrect, right?
